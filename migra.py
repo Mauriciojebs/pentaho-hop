@@ -7,9 +7,10 @@ from datetime import datetime
 import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext, ttk
 import threading
+import charset_normalizer
 
 # =========================================================
-# FUNÇÕES AUXILIARES
+# FUNÇÕES AUXILIARES 2.3
 # =========================================================
 
 def backup_arquivo(caminho):
@@ -21,9 +22,14 @@ def backup_arquivo(caminho):
     return None
 
 def ler_kettle_properties(caminho_kettle, caminho_json_destino):
-    """Converte kettle.properties em JSON de variáveis para o Hop."""
+    """Converte kettle.properties em JSON de variáveis para o Hop, detectando encoding."""
+    # Detecta a codificação
+    with open(caminho_kettle, "rb") as f:
+        detectado = charset_normalizer.from_bytes(f.read()).best()
+        encoding_detectado = detectado.encoding or "utf-8"
+
     variaveis = {"variables": []}
-    with open(caminho_kettle, "r", encoding="utf-8") as f:
+    with open(caminho_kettle, "r", encoding=encoding_detectado, errors="ignore") as f:
         for linha in f:
             if "=" in linha and not linha.strip().startswith("#"):
                 chave, valor = linha.split("=", 1)
@@ -32,6 +38,7 @@ def ler_kettle_properties(caminho_kettle, caminho_json_destino):
                     "value": valor.strip(),
                     "description": ""
                 })
+
     with open(caminho_json_destino, "w", encoding="utf-8") as out:
         json.dump(variaveis, out, indent=2)
     return caminho_json_destino
@@ -263,13 +270,13 @@ tk.Button(root, text="Selecionar", command=selecionar_kettle).pack()
 # Nome do projeto
 tk.Label(root, text="Nome do Projeto:").pack()
 entry_nome_projeto = tk.Entry(root, width=90)
-entry_nome_projeto.insert(0, "Chatuba")
+entry_nome_projeto.insert(0, "")
 entry_nome_projeto.pack()
 
 # Nome arquivo variáveis
 tk.Label(root, text="Nome do arquivo de variáveis:").pack()
 entry_nome_variaveis = tk.Entry(root, width=90)
-entry_nome_variaveis.insert(0, "variaveis_chatuba")
+entry_nome_variaveis.insert(0, "")
 entry_nome_variaveis.pack()
 
 # Botão Executar
