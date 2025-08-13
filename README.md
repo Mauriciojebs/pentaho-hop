@@ -33,12 +33,12 @@
 
 ---
 
-## 📦 Instalação (Opções 1)
+## 📦 Instalação (Opções 1)  
 
 ✅ **Baixe o executável Migra.exe 
 ✅ ***e Seja feliz (Windows)!!!*
 
-## 📦 Instalação (Opções 2)
+## 📦 Instalação (Opções 2)  
 
 ### 1️⃣ Clonar o repositório
 ```bash
