@@ -25,7 +25,7 @@
 
 ## 📸 Screenshots
 
-> Adicione suas imagens na pasta `docs/` e substitua os exemplos abaixo.
+> Imagens
 
 | Tela Principal | Log e Progresso |
 |---------------|----------------|
