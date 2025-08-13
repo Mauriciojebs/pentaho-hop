@@ -29,7 +29,7 @@
 
 | Tela Principal | Log e Progresso |
 |---------------|----------------|
-| ![Tela Principal](docs/tela.png) | ![Log de Migração](docs/relatorio.png.png) |
+| ![Tela Principal](docs/Tela.png) | ![Log de Migração](docs/relatorio.png.png) |
 
 ---
 
