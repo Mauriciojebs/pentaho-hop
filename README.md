@@ -54,12 +54,13 @@ pip install -r requirements.txt
 python migra.py
 #   b) Ou utilizar o .exe gerado via PyInstaller
 
-### 4️⃣ Selecionar no programa:
-✅ **Caminho do hop-import.bat ou hop-import.sh
-✅ **Diretório origem do Pentaho
-✅ **Diretório destino no Hop
-✅ **Arquivo kettle.properties
-✅ **Nome do projeto e nome do arquivo de variáveis
+### 4️⃣ Selecionar no programa:  
+
+✅ **Caminho do hop-import.bat ou hop-import.sh  
+✅ **Diretório origem do Pentaho  
+✅ **Diretório destino no Hop  
+✅ **Arquivo kettle.properties  
+✅ **Nome do projeto e nome do arquivo de variáveis  
 
 ### 5️⃣ Criar Executável (opcional)
 ```bash
