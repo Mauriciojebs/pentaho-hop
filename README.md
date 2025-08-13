@@ -29,7 +29,7 @@
 
 | Tela Principal | Log e Progresso |
 |---------------|----------------|
-| ![Tela Principal](docs/tela.png) | ![Log de Migração](docs/relatorio.png.png) |
+| ![Tela Principal](docs/Tela.png) | ![Log de Migração](docs/relatorio.png) |
 
 ---
 
@@ -39,3 +39,32 @@
 ```bash
 git clone https://github.com/seu-usuario/pentaho-hop.git
 cd pentaho-hop
+```
+
+### 2️⃣ Instalar dependências
+```bash
+pip install -r requirements.txt
+```
+
+✅ **Conteúdo do arquivo requirements.txt:
+✅ **charset_normalizer
+
+### 3️⃣ Como Usar
+#   a) Executar o programa
+python migra.py
+#   b) Ou utilizar o .exe gerado via PyInstaller
+
+### 4️⃣ Selecionar no programa:  
+
+✅ **Caminho do hop-import.bat ou hop-import.sh  
+✅ **Diretório origem do Pentaho  
+✅ **Diretório destino no Hop  
+✅ **Arquivo kettle.properties  
+✅ **Nome do projeto e nome do arquivo de variáveis  
+
+### 5️⃣ Criar Executável (opcional)
+```bash
+pip install pyinstaller
+pyinstaller --onefile --noconsole migra.py
+```
+✅ **O executável será gerado na pasta dist/
