@@ -171,10 +171,8 @@ def executar_processo():
     txt_log.insert(tk.END, f"hop-import finalizado com código: {retorno}\n\n")
 
     # Cria projeto Hop
-    projeto_path, var_path, env_path, proj_config_path = criar_projeto_hop(
-        hop_path, destino, nome_projeto, nome_variaveis, caminho_kettle
-    )
-    atualizar_hop_config(hop_config, nome_projeto, projeto_path, nome_variaveis)
+    projeto_path, var_path, env_path, proj_config_path = criar_projeto_hop(hop_path, destino, nome_projeto, nome_variaveis, caminho_kettle)
+    atualizar_hop_config(hop_config, nome_projeto, destino, nome_variaveis)
 
     # Comparação de artefatos
     jobs_pdi = contar_artefatos(origem, (".kjb",))
